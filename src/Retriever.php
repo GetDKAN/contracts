@@ -16,6 +16,6 @@ interface Retriever
      * @throws \Exception
      *   No data matched the identifier.
      */
-    public function retrieve($id);
+    public function retrieve(string $id): ?string;
 
 }

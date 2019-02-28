@@ -9,8 +9,8 @@ interface BulkRetriever
   /**
    * Retrieve all.
    *
-   * @return string
-   *   A json string with an array of objects.
+   * @return array
+   *   An array of strings keyed by id.
    */
-  public function retrieveAll();
+  public function retrieveAll(): array;
 }

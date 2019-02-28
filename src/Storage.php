@@ -21,7 +21,7 @@ interface Storage extends Retriever
    * @throws \Exception
    *   Issues storing the data.
    */
-  public function store($data, $id = null);
+  public function store(string $data, string $id = null): string;
 
   /**
    * Remove.
@@ -29,5 +29,5 @@ interface Storage extends Retriever
    * @param string $id
    *   The identifier for the data.
    */
-  public function remove($id);
+  public function remove(string $id);
 }
