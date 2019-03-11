@@ -2,7 +2,11 @@
 
 namespace Contracts\Mock\Storage;
 
-class Memory implements \Contracts\Storage, \Contracts\BulkRetriever {
+use Contracts\Storage;
+use Contracts\BulkRetriever;
+
+class Memory implements Storage, BulkRetriever {
+
   private $storage = [];
 
   public function retrieve(string $id): ?string
@@ -20,7 +24,7 @@ class Memory implements \Contracts\Storage, \Contracts\BulkRetriever {
 
   public function store(string $data, string $id = NULL): string
   {
-    if (!$id) {
+    if (!isset($id)) {
       throw new \Exception("An id is required to store the data.");
     }
     if (!isset($this->storage[$id])) {
@@ -39,4 +43,5 @@ class Memory implements \Contracts\Storage, \Contracts\BulkRetriever {
     }
     return FALSE;
   }
+
 }
