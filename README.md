@@ -1,4 +1,4 @@
-# SAE (Services API Engine)
+# Contracts
 ![CircleCI (all branches)](https://img.shields.io/circleci/project/github/fmizzell/contracts.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3790fc0eeeb9dac4f0cb/maintainability)](https://codeclimate.com/github/fmizzell/contracts/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/3790fc0eeeb9dac4f0cb/test_coverage)](https://codeclimate.com/github/fmizzell/contracts/test_coverage)
