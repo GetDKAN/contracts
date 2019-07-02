@@ -7,7 +7,7 @@ use Contracts\BulkRetriever;
 
 class Memory implements Storage, BulkRetriever {
 
-  private $storage = [];
+  protected $storage = [];
 
   public function retrieve(string $id): ?string
   {
