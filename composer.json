@@ -4,7 +4,8 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Contracts\\": "src/"
+            "Contracts\\": "src/",
+            "ContractsTests\\": "src/"
         }
     },
     "require-dev": {
