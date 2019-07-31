@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ContractsTests;
+namespace ContractsTest;
 
 class MockTest extends \PHPUnit\Framework\TestCase
 {
