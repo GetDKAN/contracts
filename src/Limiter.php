@@ -2,7 +2,7 @@
 
 namespace Contracts;
 
-interface Limiter
+interface LimiterInterface
 {
-  public function limitTo(int $number_of_items);
+    public function limitTo(int $number_of_items);
 }

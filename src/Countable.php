@@ -4,7 +4,7 @@ namespace Contracts;
 
 use phpDocumentor\Reflection\Types\Integer;
 
-interface Countable
+interface CountableInterface
 {
-  public function count(): int;
+    public function count(): int;
 }

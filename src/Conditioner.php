@@ -2,8 +2,7 @@
 
 namespace Contracts;
 
-
-interface Conditioner
+interface ConditionerInterface
 {
-  public function conditionByIsEqualTo(string $property, string $value);
+    public function conditionByIsEqualTo(string $property, string $value);
 }

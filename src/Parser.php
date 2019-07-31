@@ -3,14 +3,13 @@
 
 namespace Contracts;
 
-
-interface Parser
+interface ParserInterface
 {
-  public function feed(string $chunk);
+    public function feed(string $chunk);
 
-  public function getRecord();
+    public function getRecord();
 
-  public function reset();
+    public function reset();
 
-  public function finish();
+    public function finish();
 }

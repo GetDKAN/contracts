@@ -2,7 +2,7 @@
 
 namespace Contracts;
 
-interface IdGenerator
+interface IdGeneratorInterface
 {
-  public function generate();
+    public function generate();
 }

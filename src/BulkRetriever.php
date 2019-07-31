@@ -2,8 +2,7 @@
 
 namespace Contracts;
 
-
-interface BulkRetriever
+interface BulkRetrieverInterface
 {
 
   /**
@@ -12,5 +11,5 @@ interface BulkRetriever
    * @return array
    *   An array of strings keyed by id.
    */
-  public function retrieveAll(): array;
+    public function retrieveAll(): array;
 }

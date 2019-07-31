@@ -10,5 +10,5 @@ interface RemoverInterface
    * @param string $id
    *   The identifier for the data.
    */
-  public function remove(string $id);
+    public function remove(string $id);
 }

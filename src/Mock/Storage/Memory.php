@@ -3,45 +3,45 @@
 namespace Contracts\Mock\Storage;
 
 use Contracts\StorerInterface;
-use Contracts\BulkRetriever;
+use Contracts\BulkRetrieverInterface;
 
-class Memory implements StorerInterface, BulkRetriever {
+class Memory implements StorerInterface, BulkRetrieverInterface
+{
 
-  protected $storage = [];
+    protected $storage = [];
 
-  public function retrieve(string $id): ?string
-  {
-    if (isset($this->storage[$id])) {
-      return $this->storage[$id];
+    public function retrieve(string $id): ?string
+    {
+        if (isset($this->storage[$id])) {
+            return $this->storage[$id];
+        }
+        return null;
     }
-    return NULL;
-  }
 
-  public function retrieveAll(): array
-  {
-    return $this->storage;
-  }
-
-  public function store(string $data, string $id = NULL): string
-  {
-    if (!isset($id)) {
-      throw new \Exception("An id is required to store the data.");
+    public function retrieveAll(): array
+    {
+        return $this->storage;
     }
-    if (!isset($this->storage[$id])) {
-      $this->storage[$id] = $data;
-      return $id;
-    }
-    $this->storage[$id] = $data;
-    return TRUE;
-  }
 
-  public function remove(string $id)
-  {
-    if (isset($this->storage[$id])) {
-      unset($this->storage[$id]);
-      return TRUE;
+    public function store(string $data, string $id = null): string
+    {
+        if (!isset($id)) {
+            throw new \Exception("An id is required to store the data.");
+        }
+        if (!isset($this->storage[$id])) {
+            $this->storage[$id] = $data;
+            return $id;
+        }
+        $this->storage[$id] = $data;
+        return true;
     }
-    return FALSE;
-  }
 
+    public function remove(string $id)
+    {
+        if (isset($this->storage[$id])) {
+            unset($this->storage[$id]);
+            return true;
+        }
+        return false;
+    }
 }

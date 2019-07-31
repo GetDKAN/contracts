@@ -2,7 +2,7 @@
 
 namespace Contracts;
 
-interface Offsetter
+interface OffsetterInterface
 {
-  public function offsetBy(int $offset);
+    public function offsetBy(int $offset);
 }
