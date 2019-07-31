@@ -2,10 +2,10 @@
 
 namespace Contracts\Mock\Storage;
 
-use Contracts\Storage;
+use Contracts\StorerInterface;
 use Contracts\BulkRetriever;
 
-class Memory implements Storage, BulkRetriever {
+class Memory implements StorerInterface, BulkRetriever {
 
   protected $storage = [];
 

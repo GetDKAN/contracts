@@ -2,7 +2,7 @@
 
 namespace Contracts;
 
-interface Storage extends Retriever
+interface StorerInterface
 {
 
 
@@ -22,12 +22,4 @@ interface Storage extends Retriever
    *   Issues storing the data.
    */
   public function store(string $data, string $id = null): string;
-
-  /**
-   * Remove.
-   *
-   * @param string $id
-   *   The identifier for the data.
-   */
-  public function remove(string $id);
 }
