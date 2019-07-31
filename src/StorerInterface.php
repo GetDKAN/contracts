@@ -4,8 +4,6 @@ namespace Contracts;
 
 interface StorerInterface
 {
-
-
   /**
    * Store.
    *
@@ -21,5 +19,5 @@ interface StorerInterface
    * @throws \Exception
    *   Issues storing the data.
    */
-  public function store(string $data, string $id = null): string;
+    public function store(string $data, string $id = null): string;
 }

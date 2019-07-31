@@ -2,7 +2,7 @@
 
 namespace Contracts;
 
-interface Retriever
+interface RetrieverInterface
 {
     /**
      * Retrieve.
@@ -17,5 +17,4 @@ interface Retriever
      *   No data matched the identifier.
      */
     public function retrieve(string $id): ?string;
-
 }
