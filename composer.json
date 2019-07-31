@@ -1,5 +1,5 @@
 {
-    "name": "fmizzell/contracts",
+    "name": "getdkan/contracts",
     "description": "A set of interfaces.",
     "type": "library",
     "autoload": {
