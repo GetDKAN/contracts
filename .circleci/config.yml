@@ -2,7 +2,7 @@ version: 2.0
 jobs:
   build:
     environment:
-      CC_TEST_REPORTER_ID: 446d4c4302c906c32e5341ac0e6edecc52ff53a33a05f9c9b8cc9271ee86681e
+      CC_TEST_REPORTER_ID: d20339bfed51b1e242630efbe3f2745337794f7a856f610aad4d21897c5e0309
     docker:
       - image: circleci/php:7-cli-node-browsers-legacy
     working_directory: ~/repo
