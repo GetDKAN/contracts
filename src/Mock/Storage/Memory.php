@@ -10,8 +10,7 @@ class Memory implements StorerInterface, BulkRetrieverInterface
 
     protected $storage = [];
 
-    public function retrieve(string $id): ?string
-    {
+    public function retrieve(string $id): ?string {
         if (isset($this->storage[$id])) {
             return $this->storage[$id];
         }
