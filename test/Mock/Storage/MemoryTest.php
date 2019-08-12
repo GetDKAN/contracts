@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace ContractsTest;
 
-class MockTest extends \PHPUnit\Framework\TestCase
+use Contracts\Mock\Storage\MemoryFactory;
+
+class MemoryTest extends \PHPUnit\Framework\TestCase
 {
     public function testStorageMemoryException()
     {
-        $store = new \Contracts\Mock\Storage\Memory();
+        $factory = new MemoryFactory();
+        $store = $factory->getInstance("store");
 
         $this->expectExceptionMessage("An id is required to store the data.");
         $store->store("Data");
