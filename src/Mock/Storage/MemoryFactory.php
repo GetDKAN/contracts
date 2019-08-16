@@ -9,7 +9,7 @@ class MemoryFactory implements FactoryInterface
 
     private $stores;
 
-    public function getInstance($identifier)
+    public function getInstance(string $identifier)
     {
         if (!isset($this->stores[$identifier])) {
             $this->stores[$identifier] = new Memory();
