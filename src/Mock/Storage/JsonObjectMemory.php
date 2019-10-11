@@ -31,7 +31,7 @@ class JsonObjectMemory extends Memory implements
         return  $results;
     }
 
-    public function store(string $data, string $id = null): string
+    public function store($data, string $id = null): string
     {
         $this->validate($data);
         return parent::store($data, $id);

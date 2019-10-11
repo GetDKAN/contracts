@@ -1,8 +1,6 @@
 <?php
 
-
 namespace ContractsTest\Mock\IdGenerator;
-
 
 use Contracts\Mock\IdGenerator\Sequential;
 use PHPUnit\Framework\TestCase;

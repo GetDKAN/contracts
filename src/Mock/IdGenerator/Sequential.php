@@ -2,7 +2,9 @@
 
 namespace Contracts\Mock\IdGenerator;
 
-class Sequential implements \Contracts\IdGeneratorInterface
+use Contracts\IdGeneratorInterface;
+
+class Sequential implements IdGeneratorInterface
 {
     private $id = 0;
     public function generate()

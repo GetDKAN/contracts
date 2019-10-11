@@ -7,7 +7,7 @@ interface StorerInterface
   /**
    * Store.
    *
-   * @param string $data
+   * @param mixed $data
    *   The data to be stored.
    * @param string $id
    *   The identifier for the data. If the act of storing generates the
@@ -19,5 +19,5 @@ interface StorerInterface
    * @throws \Exception
    *   Issues storing the data.
    */
-    public function store(string $data, string $id = null): string;
+    public function store($data, string $id = null): string;
 }
