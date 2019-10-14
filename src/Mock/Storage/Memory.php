@@ -2,10 +2,11 @@
 
 namespace Contracts\Mock\Storage;
 
+use Contracts\RetrieverInterface;
 use Contracts\StorerInterface;
 use Contracts\BulkRetrieverInterface;
 
-class Memory implements StorerInterface, BulkRetrieverInterface
+class Memory implements RetrieverInterface, StorerInterface, BulkRetrieverInterface
 {
 
     protected $storage = [];
