@@ -7,7 +7,7 @@ interface StorerInterface
   /**
    * Store.
    *
-   * @param mixed $data
+   * @param string|HydratableInterface $data
    *   The data to be stored.
    * @param string $id
    *   The identifier for the data. If the act of storing generates the

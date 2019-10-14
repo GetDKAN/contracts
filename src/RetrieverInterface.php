@@ -10,7 +10,7 @@ interface RetrieverInterface
      * @param string $id
      *   The identifier for the data.
      *
-     * @return mixed
+     * @return string | HydratableInterface
      *   The data or null if no data could be retrieved.
      */
     public function retrieve(string $id);
