@@ -2,15 +2,16 @@
 
 namespace Contracts\Mock\Storage;
 
+use Contracts\RetrieverInterface;
 use Contracts\StorerInterface;
 use Contracts\BulkRetrieverInterface;
 
-class Memory implements StorerInterface, BulkRetrieverInterface
+class Memory implements RetrieverInterface, StorerInterface, BulkRetrieverInterface
 {
 
     protected $storage = [];
 
-    public function retrieve(string $id): ?string
+    public function retrieve(string $id)
     {
         if (isset($this->storage[$id])) {
             return $this->storage[$id];
@@ -23,7 +24,7 @@ class Memory implements StorerInterface, BulkRetrieverInterface
         return $this->storage;
     }
 
-    public function store(string $data, string $id = null): string
+    public function store($data, string $id = null): string
     {
         if (!isset($id)) {
             throw new \Exception("An id is required to store the data.");
