@@ -15,5 +15,5 @@ interface FactoryInterface
    *
    * @return mixed
    */
-    public function getInstance(string $identifier);
+    public function getInstance(string $identifier, array $config = []);
 }
