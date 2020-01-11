@@ -9,7 +9,7 @@ interface BulkRetrieverInterface
    * Retrieve all.
    *
    * @return array
-   *   An array of strings keyed by id.
+   *   An array of ids.
    */
     public function retrieveAll(): array;
 }
