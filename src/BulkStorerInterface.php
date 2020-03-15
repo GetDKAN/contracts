@@ -2,7 +2,7 @@
 
 namespace Contracts;
 
-interface BulkRetrieverInterface
+interface BulkStorerInterface
 {
 
   /**
