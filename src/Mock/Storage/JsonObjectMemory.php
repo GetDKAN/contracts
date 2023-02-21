@@ -13,15 +13,15 @@ class JsonObjectMemory extends Memory implements
     OffsetterInterface,
     LimiterInterface
 {
-    private $offset = 0;
-    private $limit = 0;
+    private int $offset = 0;
+    private int $limit = 0;
 
-    private $sorts = [
+    private array $sorts = [
     'ascend' => [],
     'descend' => [],
     ];
 
-    private $conditions = [];
+    private array $conditions = [];
 
     public function retrieveAll(): array
     {
@@ -71,7 +71,7 @@ class JsonObjectMemory extends Memory implements
             foreach ($this->conditions as $property => $values) {
                 foreach ($values as $value) {
                     foreach ($results as $key => $result) {
-                        $obj = json_decode($result);
+                        $obj = json_decode($result, null, 512, JSON_THROW_ON_ERROR);
                         if ($obj->{$property} == $value) {
                             $results2[$key] = $result;
                         }
@@ -85,9 +85,7 @@ class JsonObjectMemory extends Memory implements
 
         foreach ($this->sorts as $type => $properties) {
             foreach ($properties as $property) {
-                usort($results, function ($a, $b) use ($property) {
-                    return $this->compare($a, $b, $property);
-                });
+                usort($results, fn($a, $b) => $this->compare($a, $b, $property));
 
                 if ($type == 'descend') {
                       $results = array_reverse($results);
@@ -117,7 +115,7 @@ class JsonObjectMemory extends Memory implements
 
     private function validate(string $data)
     {
-        $decoded = json_decode($data);
+        $decoded = json_decode($data, null, 512, JSON_THROW_ON_ERROR);
         if (is_null($decoded)) {
             throw new \Exception("Only JSON strings can be stored");
         }
@@ -128,8 +126,8 @@ class JsonObjectMemory extends Memory implements
 
     private function compare($a, $b, $property)
     {
-        $a = json_decode($a);
-        $b = json_decode($b);
+        $a = json_decode($a, null, 512, JSON_THROW_ON_ERROR);
+        $b = json_decode($b, null, 512, JSON_THROW_ON_ERROR);
         return strnatcmp($a->{$property}, $b->{$property});
     }
 }

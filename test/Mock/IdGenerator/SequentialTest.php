@@ -7,12 +7,12 @@ use PHPUnit\Framework\TestCase;
 
 class SequentialTest extends TestCase
 {
-  public function test() {
-    $generator = new Sequential();
-    $id1 = $generator->generate();
-    $this->assertEquals(1, $id1);
-    $id2 = $generator->generate();
-    $this->assertEquals(2, $id2);
-  }
-
+    public function test()
+    {
+        $generator = new Sequential();
+        $id1 = $generator->generate();
+        $this->assertEquals(1, $id1);
+        $id2 = $generator->generate();
+        $this->assertEquals(2, $id2);
+    }
 }
