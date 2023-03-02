@@ -71,7 +71,7 @@ class JsonObjectMemory extends Memory implements
             foreach ($this->conditions as $property => $values) {
                 foreach ($values as $value) {
                     foreach ($results as $key => $result) {
-                        $obj = json_decode($result, null, 512, JSON_THROW_ON_ERROR);
+                        $obj = json_decode($result);
                         if ($obj->{$property} == $value) {
                             $results2[$key] = $result;
                         }
@@ -115,7 +115,7 @@ class JsonObjectMemory extends Memory implements
 
     private function validate(string $data)
     {
-        $decoded = json_decode($data, null, 512, JSON_THROW_ON_ERROR);
+        $decoded = json_decode($data);
         if (is_null($decoded)) {
             throw new \Exception("Only JSON strings can be stored");
         }
@@ -126,8 +126,8 @@ class JsonObjectMemory extends Memory implements
 
     private function compare($a, $b, $property)
     {
-        $a = json_decode($a, null, 512, JSON_THROW_ON_ERROR);
-        $b = json_decode($b, null, 512, JSON_THROW_ON_ERROR);
+        $a = json_decode($a);
+        $b = json_decode($b);
         return strnatcmp($a->{$property}, $b->{$property});
     }
 }
