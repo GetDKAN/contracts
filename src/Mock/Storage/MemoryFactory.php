@@ -7,7 +7,7 @@ use Contracts\FactoryInterface;
 class MemoryFactory implements FactoryInterface
 {
 
-    private $stores;
+    private ?array $stores = null;
 
     public function getInstance(string $identifier, array $config = [])
     {

@@ -13,15 +13,15 @@ class JsonObjectMemory extends Memory implements
     OffsetterInterface,
     LimiterInterface
 {
-    private $offset = 0;
-    private $limit = 0;
+    private int $offset = 0;
+    private int $limit = 0;
 
-    private $sorts = [
+    private array $sorts = [
     'ascend' => [],
     'descend' => [],
     ];
 
-    private $conditions = [];
+    private array $conditions = [];
 
     public function retrieveAll(): array
     {
@@ -85,9 +85,7 @@ class JsonObjectMemory extends Memory implements
 
         foreach ($this->sorts as $type => $properties) {
             foreach ($properties as $property) {
-                usort($results, function ($a, $b) use ($property) {
-                    return $this->compare($a, $b, $property);
-                });
+                usort($results, fn($a, $b) => $this->compare($a, $b, $property));
 
                 if ($type == 'descend') {
                       $results = array_reverse($results);
