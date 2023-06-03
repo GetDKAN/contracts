@@ -37,27 +37,27 @@ class JsonObjectMemory extends Memory implements
         return parent::store($data, $id);
     }
 
-    public function conditionByIsEqualTo(string $property, string $value)
+    public function conditionByIsEqualTo(string $property, string $value): void
     {
         $this->conditions[$property][] = $value;
     }
 
-    public function limitTo(int $number_of_items)
+    public function limitTo(int $number_of_items): void
     {
         $this->limit = $number_of_items;
     }
 
-    public function offsetBy(int $offset)
+    public function offsetBy(int $offset): void
     {
         $this->offset = $offset;
     }
 
-    public function sortByAscending(string $property)
+    public function sortByAscending(string $property): void
     {
         $this->sorts['ascend'][] = $property;
     }
 
-    public function sortByDescending(string $property)
+    public function sortByDescending(string $property): void
     {
         $this->sorts['descend'][] = $property;
     }
@@ -100,7 +100,7 @@ class JsonObjectMemory extends Memory implements
         return $results;
     }
 
-    private function resetFilters()
+    private function resetFilters(): void
     {
         $this->offset = 0;
         $this->limit = 0;
@@ -124,7 +124,7 @@ class JsonObjectMemory extends Memory implements
         }
     }
 
-    private function compare($a, $b, $property)
+    private function compare($a, $b, $property): int
     {
         $a = json_decode($a);
         $b = json_decode($b);

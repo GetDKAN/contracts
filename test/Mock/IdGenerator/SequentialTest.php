@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class SequentialTest extends TestCase
 {
-    public function test()
+    public function test(): void
     {
         $generator = new Sequential();
         $id1 = $generator->generate();
