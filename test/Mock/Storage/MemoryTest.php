@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace ContractsTest;
 
+use PHPUnit\Framework\TestCase;
+use Contracts\Mock\Storage\Memory;
+use Contracts\Mock\Storage\JsonObjectMemory;
 use Contracts\Mock\Storage\MemoryFactory;
 
-class MemoryTest extends \PHPUnit\Framework\TestCase
+class MemoryTest extends TestCase
 {
-    public function testStorageMemoryException()
+    public function testStorageMemoryException(): void
     {
         $factory = new MemoryFactory();
         $store = $factory->getInstance("store");
@@ -17,9 +20,9 @@ class MemoryTest extends \PHPUnit\Framework\TestCase
         $store->store("Data");
     }
 
-    public function testStorageMemory()
+    public function testStorageMemory(): void
     {
-        $store = new \Contracts\Mock\Storage\Memory();
+        $store = new Memory();
 
         $store->store("Data", "1");
         $this->assertEquals("Data", $store->retrieve("1"));
@@ -37,7 +40,7 @@ class MemoryTest extends \PHPUnit\Framework\TestCase
         $this->assertNull($store->retrieve("1"));
     }
 
-    public function testStorageJsonObjectMemory()
+    public function testStorageJsonObjectMemory(): void
     {
         $objects = [];
         $objects[] = <<<JSON
@@ -68,7 +71,7 @@ JSON;
 }
 JSON;
 
-        $store = new \Contracts\Mock\Storage\JsonObjectMemory();
+        $store = new JsonObjectMemory();
 
 
         foreach ($objects as $index => $object) {
