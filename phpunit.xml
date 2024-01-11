@@ -6,9 +6,16 @@
             <directory suffix=".php">src</directory>
         </include>
     </coverage>
+    <listeners>
+        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener"/>
+    </listeners>
+    <php>
+        <!-- Don't fail for external dependencies. -->
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[self]=0"/>
+    </php>
     <testsuites>
         <testsuite name="all">
-            <directory suffix="Test.php">test</directory>
+            <directory>test</directory>
         </testsuite>
     </testsuites>
 </phpunit>
