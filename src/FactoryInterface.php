@@ -2,6 +2,8 @@
 
 namespace Contracts;
 
+@trigger_error(__CLASS__ . '\FactoryInterface is deprecated.', E_USER_DEPRECATED);
+
 interface FactoryInterface
 {
   /**
