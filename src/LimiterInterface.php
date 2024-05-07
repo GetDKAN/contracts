@@ -2,7 +2,7 @@
 
 namespace Contracts;
 
-@trigger_error(__CLASS__ . '\LimiterInterface is deprecated.', E_USER_DEPRECATED);
+@trigger_error(__NAMESPACE__ . '\LimiterInterface is deprecated.', E_USER_DEPRECATED);
 
 interface LimiterInterface
 {

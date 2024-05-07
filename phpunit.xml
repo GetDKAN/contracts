@@ -11,7 +11,7 @@
     </listeners>
     <php>
         <!-- Don't fail for external dependencies. -->
-        <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[self]=0"/>
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="disabled"/>
     </php>
     <testsuites>
         <testsuite name="all">

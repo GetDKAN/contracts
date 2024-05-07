@@ -3,7 +3,7 @@
 
 namespace Contracts;
 
-@trigger_error(__CLASS__ . '\ParserInterface is deprecated.', E_USER_DEPRECATED);
+@trigger_error(__NAMESPACE__ . '\ParserInterface is deprecated.', E_USER_DEPRECATED);
 
 interface ParserInterface
 {
