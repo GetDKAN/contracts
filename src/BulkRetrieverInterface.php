@@ -2,8 +2,6 @@
 
 namespace Contracts;
 
-@trigger_error(__NAMESPACE__ . '\BulkRetrieverInterface is deprecated.', E_USER_DEPRECATED);
-
 interface BulkRetrieverInterface
 {
 
