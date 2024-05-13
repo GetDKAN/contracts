@@ -2,8 +2,6 @@
 
 namespace Contracts;
 
-@trigger_error(__NAMESPACE__ . '\BulkStorerInterface is deprecated.', E_USER_DEPRECATED);
-
 interface BulkStorerInterface
 {
 
