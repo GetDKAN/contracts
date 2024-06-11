@@ -85,7 +85,7 @@ class JsonObjectMemory extends Memory implements
 
         foreach ($this->sorts as $type => $properties) {
             foreach ($properties as $property) {
-                usort($results, fn($a, $b) => $this->compare($a, $b, $property));
+                usort($results, fn($a, $b): int => $this->compare($a, $b, $property));
 
                 if ($type == 'descend') {
                       $results = array_reverse($results);
