@@ -2,7 +2,10 @@
 
 namespace Contracts;
 
-@trigger_error(__NAMESPACE__ . '\HydratableInterface is deprecated.', E_USER_DEPRECATED);
+@trigger_error(
+    __NAMESPACE__ . '\HydratableInterface is deprecated. Use \Procrastinator\HydratableInterface intead.',
+    E_USER_DEPRECATED
+);
 
 interface HydratableInterface extends \JsonSerializable
 {

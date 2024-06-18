@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "php": ">=7.4 <9.0"
+        "php": ">=7.4 <9.0",
+        "ext-json": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.6",
@@ -33,7 +34,7 @@
     },
     "scripts": {
         "phpcbf": "./vendor/bin/phpcbf",
-        "phpcs": "./vendor/bin/phpcs",
+        "phpcs": "./vendor/bin/phpcs -s",
         "rector": "./vendor/bin/rector process",
         "rector-dry-run": "./vendor/bin/rector process --dry-run",
         "test": "./vendor/bin/phpunit --testsuite all"

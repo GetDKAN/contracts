@@ -8,7 +8,10 @@
     <file>test</file>
     <file>rector.php</file>
 
-    <rule ref="PSR1"/>
+    <rule ref="PSR1">
+        <!-- PSR1 does not like that we trigger deprecation errors. -->
+        <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
+    </rule>
     <rule ref="PSR2"/>
 
 </ruleset>
