@@ -8,15 +8,12 @@ use Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector;
 use Rector\DeadCode\Rector\Property\RemoveUselessVarTagRector;
 use Rector\Php73\Rector\FuncCall\JsonThrowOnErrorRector;
 use Rector\Set\ValueObject\SetList;
-use Rector\TypeDeclaration\Rector\ArrowFunction\AddArrowFunctionReturnTypeRector;
-use Rector\TypeDeclaration\Rector\ClassMethod\AddMethodCallBasedStrictParamTypeRector;
-use Rector\TypeDeclaration\Rector\ClassMethod\ArrayShapeFromConstantArrayReturnRector;
-use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictTypedCallRector;
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths([
         __DIR__ . '/src',
         __DIR__ . '/test',
+        __DIR__ . '/rector.php',
     ]);
 
     $rectorConfig->sets([
@@ -35,12 +32,9 @@ return static function (RectorConfig $rectorConfig): void {
         RemoveUselessParamTagRector::class,
         RemoveUselessReturnTagRector::class,
         RemoveUselessVarTagRector::class,
-        ArrayShapeFromConstantArrayReturnRector::class,
-        AddMethodCallBasedStrictParamTypeRector::class,
-        AddArrowFunctionReturnTypeRector::class,
-        ReturnTypeFromStrictTypedCallRector::class,
     ]);
 
+    $rectorConfig->removeUnusedImports();
     $rectorConfig->importNames();
     $rectorConfig->importShortClasses(false);
 };
