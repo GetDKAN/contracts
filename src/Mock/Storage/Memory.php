@@ -24,7 +24,7 @@ class Memory implements RetrieverInterface, StorerInterface, BulkRetrieverInterf
         return $this->storage;
     }
 
-    public function store($data, string $id = null): string
+    public function store($data, ?string $id = null): string
     {
         if (!isset($id)) {
             throw new \Exception("An id is required to store the data.");
