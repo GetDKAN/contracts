@@ -13,5 +13,6 @@
         <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
     </rule>
     <rule ref="PSR2"/>
+    <rule ref="Drupal" />
 
 </ruleset>
