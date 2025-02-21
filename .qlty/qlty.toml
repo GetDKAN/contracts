@@ -71,6 +71,7 @@ version = "0.41.0"
 
 [[plugin]]
 name = "php-codesniffer"
+package_file = ".qlty/configs/composer.json"
 
 [[plugin]]
 name = "phpstan"
