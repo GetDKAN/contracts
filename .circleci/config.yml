@@ -115,15 +115,14 @@ commands:
                   install-flags: <<parameters.install-flags>>
             - when:
                   condition: <<parameters.report-to-qlty>>
+                  environment:
+                      QLTY_COVERAGE_TOKEN: ${QLTY_COVERAGE_TOKEN}
                   steps:
                       - install-xdebug
                       - install-qlty
-                      - run: 
-                        command: |
+                      - run: |
                             XDEBUG_MODE=coverage composer <<parameters.test-command>> -- --coverage-clover clover.xml
                             qlty coverage publish --format clover --file clover.xml
-                        environment:
-                            QLTY_COVERAGE_TOKEN: ${QLTY_COVERAGE_TOKEN}
 
             - when:
                   condition:
