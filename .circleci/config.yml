@@ -124,7 +124,6 @@ commands:
                             XDEBUG_MODE=coverage composer <<parameters.test-command>> -- --coverage-clover clover.xml
                             source /home/circleci/.profile
                             qlty coverage publish --format clover clover.xml
-
             - when:
                   condition:
                       not: <<parameters.report-to-qlty>>
