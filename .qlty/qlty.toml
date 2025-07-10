@@ -60,12 +60,6 @@ name = "default"
 default = true
 
 [[plugin]]
-name = "checkov"
-
-[[plugin]]
-name = "golangci-lint"
-
-[[plugin]]
 name = "markdownlint"
 version = "0.41.0"
 
@@ -81,16 +75,6 @@ name = "prettier"
 
 [[plugin]]
 name = "ripgrep"
-
-[[plugin]]
-name = "trivy"
-drivers = [
-  "config",
-  "fs-vuln",
-]
-
-[[plugin]]
-name = "trufflehog"
 
 [[plugin]]
 name = "yamllint"
